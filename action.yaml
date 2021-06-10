@@ -4,7 +4,7 @@ inputs:
   docs-dir:
     description: 'The directory where your MkDocs project is in'
     required: false
-    default: '.'
+    default: .
   extra-packages:
     description: 'Extra pip packages you want to add. This is useful in situations where you want to use MkDocs extensions such as PyMdown Extensions'
     required: false
@@ -12,7 +12,11 @@ inputs:
 runs:
   using: 'composite'
   steps:
+    - run: echo Installing pip packages
+      shell: bash
     - run: pip install mkdocs ${{ inputs.extra-packages }}
+      shell: bash
+    - run: echo Deploying
       shell: bash
     - run: mkdocs gh-deploy`
       shell: bash
