@@ -14,6 +14,6 @@ runs:
   steps:
     - run: pip install mkdocs ${{ inputs.extra-packages }}
       shell: bash
-    - run: mkdocs gh-deploy
+    - run: mkdocs gh-deploy --force
       shell: bash
       working-directory: ${{ inputs.docs-dir }}
