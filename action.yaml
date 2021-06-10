@@ -1,5 +1,5 @@
 name: 'Deploy MkDocs project'
-description: 'Easily publish your MkDocs project to GitHub Pages'
+description: 'Easily deploy your MkDocs project to GitHub Pages'
 inputs:
   docs-dir:
     description: 'The directory where your MkDocs project is in'
