@@ -1,0 +1,23 @@
+name: 'Deploy MkDocs project'
+description: 'Easily publish your MkDocs project to GitHub Pages'
+inputs:
+  docs-dir:
+    description: 'The directory where your MkDocs project is in'
+    required: false
+    default: '.'
+  extra-packages:
+    description: 'Extra pip packages you want to add. This is useful in situations where you want to use MkDocs extensions such as PyMdown Extensions'
+    required: false
+    default: ''
+runs:
+  using: 'composite'
+  steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+      with:
+        python-version: 3.x
+    - run: pip install mkdocs ${{ inputs.extra-packages }}
+      shell: bash
+    - run: mkdocs gh-deploy`
+      shell: bash
+      working-directory: ${{ inputs.docs-dir }}
