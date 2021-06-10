@@ -8,7 +8,7 @@ inputs:
   extra-packages:
     description: 'Extra pip packages you want to add. This is useful in situations where you want to use MkDocs extensions such as PyMdown Extensions'
     required: false
-    default: ''
+    default: null
 runs:
   using: 'composite'
   steps:
