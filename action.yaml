@@ -6,7 +6,7 @@ inputs:
     required: false
     default: '.'
   extra-packages:
-    description: 'Extra pip packages you want to add. This is useful in situations where you want to use MkDocs extensions such as PyMdown Extensions'
+    description: 'Extra pip packages you want to add. This is useful in situations where you want to use MkDocs extensions such as PyMdown Extensions
     required: false
     default: null
 runs:
